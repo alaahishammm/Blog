@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Create Post";
+}
+
+<div class="text-danger">
+    <span asp-validation-summary="All"></span>
+</div>
+<form asp-action="CreatePost" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="Pagetitle" class="form-label">Page Title</label>
+        <textarea class="form-control" id="Pagetitle" name="Pagetitle" rows="1" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="content" class="form-label">Post Content</label>
+        <textarea class="form-control" id="content" name="content" rows="4" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="Auther" class="form-label">Author Name</label>
+        <textarea class="form-control" id="Auther" name="Auther" rows="1" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="heading" class="form-label">Heading</label>
+        <textarea class="form-control" id="heading" name="heading" rows="1"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="image" class="form-label">Upload Image</label>
+        <input type="file" class="form-control" id="image" name="image" accept="image/*">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Post</button>
+    <a asp-action="OrderPosts" class="btn btn-secondary ms-2">Cancel</a>
+</form>
